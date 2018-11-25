@@ -21,4 +21,18 @@ describe('Lottery Contract', () => {
     it('deploys a contract', () => {
         assert.ok(lottery.options.address);
     });
+
+    it('check allowing accounts to enter the network', async () => {
+        await lottery.methods.enter().send({
+            from: accounts[0],
+            value: web3.utils.toWei('0.02', 'ether') // this will get the equavlant amount in wei
+        });
+
+        const players = await lottery.methods.getPlayers().call({
+            from: accounts[0]
+        });
+
+        assert.equal(accounts[0], players[0]);
+        assert.equal(1, players.length);
+    });
 });
