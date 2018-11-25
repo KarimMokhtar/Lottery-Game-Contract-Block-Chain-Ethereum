@@ -4,9 +4,9 @@ Please note that you have to install the dependencies to run this humble project
 
 Commands you will need:
 npm init
-npm install --save solc
-npm install --save mocha ganache-cli web3@1.0.0-beta.26
-npm install --save truffle-hdwallet-provider
+npm install --save solc \n
+npm install --save mocha ganache-cli web3@1.0.0-beta.26 \n
+npm install --save truffle-hdwallet-provider \n
 
 and then create your Node on infura and put the link and your account pneumonic into the provider and have fun :)
 
